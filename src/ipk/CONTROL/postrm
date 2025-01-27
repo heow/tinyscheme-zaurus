@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ -e /opt/QtPalmtop/bin/tinyscheme ]; then
+    exit 0
+fi
+
+rm -f ~/Documents/9bottles.scm
+rm -f ~/Documents/listhome.scm
+rm -f ~/Documents/socket-repl.scm
+rm -f ~/Documents/text/html/Tiny\ Scheme.html
+
+exit 0

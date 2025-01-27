@@ -1,0 +1,7 @@
+[Desktop Entry]
+Comment=Tiny Scheme - Console
+Exec=schemecon.sh
+Icon=tinyscheme
+Type=Application
+Depends=embeddedkonsole
+Name=Tiny Scheme - Console

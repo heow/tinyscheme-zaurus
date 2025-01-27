@@ -1,0 +1,9 @@
+[Desktop Entry]
+Comment=Tiny Scheme - Run Script
+Exec=schemerun.sh
+Icon=tinyscheme
+Type=Application
+Depends=opie-sh
+Name=Tiny Scheme - Run Script
+MimeType=text/x-scheme
+MimeTypeIcon=tinyscheme.png

@@ -1,0 +1,8 @@
+Package: tinyscheme
+Version: 1.1
+Architecture: arm
+Maintainer: Heow Eide-Goodman geek@alphaGeeksInc.com
+Section: Console
+Priority: optional
+Description: TinyScheme (by Dimitrios Souflis) is a lightweight Scheme interpreter that implements as large a subset of R5RS as was possible without getting very large and complicated.
+

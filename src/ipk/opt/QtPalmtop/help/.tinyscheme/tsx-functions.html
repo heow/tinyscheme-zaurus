@@ -1,0 +1,176 @@
+<html>
+<body>
+
+TinyScheme Extensions (TSX) 1.1  [September, 2002]<br>
+(c) 2002 Manuel Heras-Gilsanz (manuel@heras-gilsanz.com)<br><br>
+
+In order to use these, remember to:
+<code>(load-extension "tsx")</code>
+
+<h3>TSX FUNCTIONS</h3>
+
+TSX incorporates the following functions:<p>
+
+<code>(make-client-socket host port)</code><br>
+        host: string (IP address or host name)<br>
+        port: integer number<br><br>
+
+        Returns a socket which is already connected to the
+        specified host and port, or #f if the connection could
+        not be performed.<p>
+
+<code>(make-server-socket port)</code><br>
+        port: integer number<br><br>
+
+        Returns a socket which is bound to the specified port on
+        the local machine, and ready to accept connections. If the
+        socket could not be created (e.g., because the port is
+        already in use, or it is a privileged port and the user has
+        no permissions on it), #f is returned.<p>
+
+<code>(recv! sock buff)</code><br>
+        sock: socket obtained with make-client-socket or accept<br>
+        buff: string<br><br>
+
+        Waits for received data through the specified socket, and
+        stores it on the buffer. The return value indicates the
+        number of received bytes. This call blocks until some data
+        is received, but does not guarantee that buff gets
+        completely filled. If an error occurs (e.g., the other
+        peer disconnects) then #f is returned.<p>
+
+<code>(recv-new-string sock)</code><br>
+        sock: socket obtained with make-client-socket or accept<br><br>
+
+        Waits for received data through the specified socket, and
+        returns it in a new string. This call blocks until some
+        data is received. If an error occurs, then #f is returned.<p>
+
+<code>(send sock buff)</code><br>
+        sock: socket obtained with make-client-socket or accept<br>
+        buff: string<br><br>
+
+        Sends the data contained in the string through the socket.
+        It returns the number of transmitted bytes (could be
+        different than the size of the string!), or #f if an error
+        occured (e.g., the other peer disconnected).<p>
+
+<code>(accept server-sock)</code><br>
+        server-sock: socket obtained with make-server-socket<br><br>
+
+        Waits until a connection is received on the specified
+        server socket, and returns the connected socket. If an
+        error occurs (e.g., the network interface shuts down), it
+        returns #f instead.<p>
+
+<code>(close-socket sock)</code><br>
+        sock: socket obtained with make-server-socket,
+              make-client-socket or accept<br><br>
+
+	The socket is closed. No further calls should be performed
+        on this socket.<p>
+
+<code>(sock-is-data-ready? sock)</code><br>
+        sock: socket obtained with make-server-socket,
+              make-client-socket or accept<br><br>
+
+	This function allows non-blocking operation with sockets.
+	It returns #t if data is available for reception on this
+	socket, and #f if no data has been received.<p>
+
+<code>(sock-peek sock)</code><br>
+        sock: socket obtained with make-server-socket,
+              make-client-socket or accept<br><br>
+
+	This function returns (as a newly created string) the
+	data received in this socket. The information is not
+	removed from the input queue.<p>
+
+
+<h3>Filesystem Functions</h3>
+
+Scheme already defines functions to read and write files. These
+functions allow access to the filesystem to check if a certain
+file exists, to get its size, etc.<p>
+
+<code>(file-size filename)</code><br>
+        filename: string<br><br>
+
+        This function returns the size (in bytes) of the
+        indicated file, or #f if the file does not exists or
+        is not accessible to the requesting user.<p>
+
+<code>(file-exists? filename)</code><br>
+        filename: string<br><br>
+
+        This function returns #t if the indicated file exists, and
+        #f if it does not exists or it is not accessible to the
+        requesting user.<p>
+
+<code>(delete-file filename)</code><br>
+        filename: string<br><br>
+
+        Removes the specified file. It returns #t if the operation
+        succeeds, or #f otherwise (e.g., because the file is
+        read-only, or because the file does not exist).<p>
+
+<code>(open-dir-stream path)</code><br>
+        path: string<br><br>
+
+        Opens a "directory stream" on the provided directory path.
+        This stream will provide all the files within the directory,
+        using the function read-dir-entry. The stream should be closed
+        at the end with close-dir-stream.<p>
+
+<code>(read-dir-entry dirstream)</code><br>
+        dirstream: directory stream, obtained with open-dir-stream.<br><br>
+
+        It returns the name of the following directory entry, or eof
+        if all the entries were provided. Check the return value with
+        with eof-object?.<p>
+
+<code>(close-dir-stream dirstream)</code><br>
+        dirstream: directory stream, obtained with open-dir-stream.<br><br>
+
+        Close directory stream. No further calls to read-dir-entry should
+        be performed.<p>
+
+
+<h3>Time Functions</h3>
+
+<code>(time)</code><br>
+        Returns the current local time, as a list of integer
+        containing:<br>
+          (year month day-of-month hour min sec millisec)<br>
+        The year is expressed as an offsett from 1900.<p>
+
+<code>(gettimeofday)</code><br>
+        Returns a list containing the number of seconds from
+        the beginning of the day, and microseconds within the
+        current second.<p>
+
+<code>(usleep microsec)</code><br>
+        microsec: integer<br><br>
+
+        Suspends execution of the calling thread during the
+        specified number of microseconds.<p>
+
+
+<h3>Miscellaneous functions</h3>
+
+<code>(getenv varname)</code><br>
+        varname: string<br><br>
+
+        Returns a string with the content of the specified
+        environment variable, or #f if the variable is not
+        defined.<p>
+
+<code>(system command)</code><br>
+        command: string<br><br>
+
+        Executes a command on the /bin/sh shell. Returns #f if
+        it is unable to run /bin/sh or another error occurs,
+        or an integer return code which is the value returned
+        by the command to the shell.<p>
+</body>
+</html>

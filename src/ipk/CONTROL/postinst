@@ -1,0 +1,73 @@
+#!/bin/bash
+
+# because we can't be assured of having grep
+function containsRunme () {
+    while read line; do
+        if [ "$line" = "$lineInsert" ]; then
+            return 0;
+            break;
+        fi
+    done < $fileInsert
+    return 1;
+}
+
+function addDocs () {
+    cat >> $fileInsert <<EOF
+
+# required by TinyScheme to run scripts in the embeddedkonsole
+EOF
+}
+
+function addLine () {
+    cat >> $fileInsert <<EOF
+$lineInsert
+EOF
+}
+
+# source the .bashrc, in order of precedence
+lineInsert="source ~/.bashrc"
+fileInsert="$HOME/.bash_profile"
+if [ -e "$fileInsert" ]; then
+    if ! containsRunme; then
+        addLine
+    fi
+else
+    fileInsert="$HOME/.bash_login"
+    if [ -e "$fileInsert" ]; then
+        if ! containsRunme; then
+            addLine
+        fi
+    else
+        fileInsert="$HOME/.profile"
+        if [ -e "$fileInsert" ]; then
+            if ! containsRunme; then
+                addLine
+            fi
+        else
+            addLine
+        fi
+    fi
+fi
+
+lineInsert="if [ -n \"\$RUNME\" ]; then exec \$RUNME \$RUNME_ARGS; fi"
+fileInsert="$HOME/.bashrc"
+if ! containsRunme; then
+    addDocs
+    addLine
+fi
+
+lineInsert="text/x-scheme                   scm"
+fileInsert="/opt/QtPalmtop/etc/mime.types"
+if ! containsRunme; then
+    addLine
+fi
+
+# move a few example Scheme files to the Documents
+ln -s /opt/QtPalmtop/help/.tinyscheme/examples/9bottles.scm ~/Documents/9bottles.scm
+ln -s /opt/QtPalmtop/help/.tinyscheme/examples/listhome.scm ~/Documents/listhome.scm
+ln -s /opt/QtPalmtop/help/.tinyscheme/examples/socket-repl.scm ~/Documents/socket-repl.scm
+
+# set up the documentation
+ln -s /opt/QtPalmtop/help/.tinyscheme/index.html ~/Documents/text/html/Tiny\ Scheme.html
+
+exit 0

@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Tiny Scheme</title>
+</head>
+  <body>
+                       
+<h1 align="center">Tiny Scheme</h1>
+         
+<h1 align="center"><img src="{dir}/tinyscheme.jpg" alt="lambda" width="32"
+ height="32">
+            <br>
+     </h1>
+            TinyScheme by Dimitrios Souflis is now available for the Sharp
+ Zaurus!<br>
+           <br>
+          Check it out the included resources:<br>
+                          
+<ul>
+            <li><a href="{dir}/schemetutorial/schemetutorial.html">Scheme Tutorial</a> 
+      </li>
+            <li><a href="{dir}/tinyscheme.html">TinyScheme Documentation</a> </li>
+            <li><a href="{dir}/tsx-functions.html">TinyScheme Extension Functions</a> 
+     </li>
+                   
+</ul>
+                     
+<h3> Features</h3>
+                   
+<ul>
+            <li>The same scheme as seen in Apache 2's mod_scheme!<br>
+      </li>
+      <li>Installs to CF!<br>
+            </li>
+             <li>Run any script via the "<i>TinyScheme - Run Script</i>"
+icon.    <a href="#opiesh">Requires opie-sh</a></li>
+             <li>Interactive TinyScheme console, with icon.</li>
+            <li>ALL features are available including advanced math, ascii,
+ and   strings.</li>
+            <li>Advanced <a href="{dir}/tsx-functions.html">extension functions</a> 
+  are   included.</li>
+                 <li>'*.scm' files are registered as text MIME-types.</li>
+            <li>Run scripts directly by clicking on them in your "Documents 
+ Tab", also does not pollute your "Documents Tab" with needless files and pictures.</li>
+      <li>Only an 80K executable.</li>
+      <li>Includes a great <a
+ href="{dir}/schemetutorial/schemetutorial.html">Scheme   Tutorial!</a>&nbsp;<br>
+      </li>
+                     
+</ul>
+                      
+<h3>Requires</h3>
+                   
+<ul>
+            <li>Sharp Zaurus SL-5000 or embedded-konsole, available here: 
+    <a href="http://www.rit.edu/%7Etfs1812/feed/">http://www.rit.edu/~tfs1812/feed/.</a></li>
+            <li>opie-sh suggested, available here: <a
+ href="http://www.rit.edu/%7Etfs1812/feed/">http://www.rit.edu/~tfs1812/feed/</a>.<br>
+            </li>
+                   
+</ul>
+                   
+<h3>TinyScheme - Console&nbsp;</h3>
+       
+<div align="center"><img src="{dir}/tinyscheme-consoleicon.jpg"
+ alt="console icon" width="76" height="76" align="middle">
+     <br>
+    </div>
+    <br>
+  <br>
+  Selecting this brings up TinyScheme in the terminal (embeddedkonsole or 
+opie-embeddedkonsole). &nbsp;In the interactive terminal you can enter your 
+own commands, trace the script <code>(tracing 1)</code>, or load up pre-edited 
+scripts <code>(load "whatever.scm")</code>.    
+<h3>TinyScheme - RunScript</h3>
+       
+<div align="center"><img src="{dir}/tinyscheme-runscripticon.jpg"
+ alt="runscript icon" width="76" height="76">
+    <br>
+       
+<div align="left"><br>
+  Selecting this icon brings up this dialog:<br>
+       
+<div align="center"><img src="{dir}/tinyscheme-runscript.jpg" alt="runscript"
+ width="252" height="52">
+    <br>
+    </div>
+  <br>
+  It lists all "*.scm" scripts in:<br>
+       
+<ul>
+      <li>Your home directory: <i>$HOME</i></li>
+      <li>CF card: <i>/mnt/cf</i></li>
+      <li>SD card: <i>/mnt/sd</i></li>
+       
+</ul>
+    </div>
+    </div>
+    Selecting a script from the drop-down will execute it in a terminal.<br>
+    <br>
+    This feature requires opie-sh, available here: <a
+ href="http://www.rit.edu/%7Etfs1812/feed/">http://www.rit.edu/~tfs1812/feed/</a>.<br>
+    <br>
+       
+<h3>Development Tips</h3>
+             
+<ul>
+         <li>The example programs displayed in the "Documents Tab" are available 
+   for hacking in your "<i>~/Documents</i>" directory.</li>
+         <li>Typing 'tinyscheme' or 'scheme' in the terminal will bring up
+ TinyScheme.</li>
+         <li>You can include a filename too: &nbsp;<code># tinyscheme ~/Documents/9bottles.scm</code></li>
+         <li>The terminal (embeddedkonsole) in the SL-5000 has a working
+'delete'  key, this makes interactive programming is easier.</li>
+         <li>The embeddedkonsole supplied by opie allows multiple terminals 
+ in  tabs. &nbsp;Open one for editing and another for script execution.<br>
+         </li>
+             
+</ul>
+             
+<h3>Bugs</h3>
+                   
+<ul>
+            <li><b>Zaurus Bug</b>: If installed to CF, uninstallation leaves
+  behind   some links to the example scripts in your "<i>~/Documents</i>"
+directory.    To completely remove, install in RAM, then uninstall.</li>
+            <li><b>Opie-EmbeddedKonsole Bug</b>: Backspace appears to be
+broken.     &nbsp;Works  ok with the original embeddedkonsole app.</li>
+  <li><b>TinyScheme Bug</b>: The internal package system does not appear
+to be working.<br>
+  </li>
+            <li>Sometimes TinyScheme apps automatically run after closing 
+the   terminal   or editor. &nbsp;Dunno why, but I doubt this is due exclusively 
+  to TinyScheme   because its been happening on my Zaurus before this project 
+  started.</li>
+     <li>Clicking on a script in the documents tab dosen't always run it. 
+&nbsp;Just  click on it again, I'm looking into it.<br>
+     </li>
+                   
+</ul>
+
+<h3>About</h3>
+           
+<ul>
+      <li>This Zaurus package is compliments of AlphaGeeksInc. <a
+ href="http://www.alphaGeeksInc.com">http://www.alphaGeeksInc.com</a> Feel
+  free to contact me.</li>
+      <li>TinyScheme is maintained by Dimitrios Souflis <a
+ href="http://tinyscheme.sourceforge.net">http://tinyscheme.sourceforge.net</a></li>
+      <li>TinySchemeExtensions is developed and maintained by Manuel Heras-Gilsanz
+      <a href="http://heras-gilsanz.com/manuel/index.html">http://heras-gilsanz.com/manuel/</a></li>
+      <li>The Scheme Tutorial used with permission by Catharina Candolin
+    <a href="http://www.niksula.cs.hut.fi/%7Ecandolin/scheme/">http://www.niksula.cs.hut.fi/~candolin/scheme/</a></li>
+            
+</ul>
+
+<h3>History</h3>
+           
+<ul>
+      <li><b>1.1</b> 2002-01-10 TinyScheme 1.33 released- CG bug fix.
+      <li><b>1.0</b> 2002-11-18 Initial Release
+</ul>
+              
+      <br>
+     <br>
+    <br>
+   <br>
+  <br>
+ <br>
+</body>
+</html>
