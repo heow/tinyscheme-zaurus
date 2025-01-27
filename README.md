@@ -4,7 +4,9 @@
 
 TinyScheme by Dimitrios Souflis is available for the Sharp Zaurus!
 
-![documents](src/website/Sharp_Zaurus.jpg) (source: Wikipedia)
+![documents](src/website/Sharp_Zaurus.jpg)
+
+(source: Wikipedia)
 
 * TinyScheme is free, under a BSD-style license.
 * Read the [included documentation](./src/ipk/opt/QtPalmtop/help/.tinyscheme/tinyscheme.html).
