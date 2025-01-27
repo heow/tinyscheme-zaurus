@@ -61,7 +61,7 @@ Check out the included resources:
 
 - The same scheme as seen in Apache 2's mod_scheme!
 - Installs to CF!
-- Run any script via the "*TinyScheme - Run Script*" icon. [Requires opie-sh](#opiesh)
+- Run any script via the "*TinyScheme - Run Script*" icon. [Requires opie-sh](http://www.sdjf.esmartdesign.com/ipks/opiesh.html)
 - Interactive TinyScheme console, with icon.
 - ALL features are available including advanced math, ASCII, and strings.
 - Advanced [extension functions](./src/ipk/opt/QtPalmtop/help/.tinyscheme/tsx-functions.html) are included.
