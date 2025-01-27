@@ -53,7 +53,7 @@ TinyScheme by Dimitrios Souflis is now available for the Sharp Zaurus!
 
 Check out the included resources:
 
-- [Scheme Tutorial](./src/ipk/opt/QtPalmtop/help/.tinyscheme/schemetutorial/schemetutorial/schemetutorial.html)
+- [Scheme Tutorial](./src/ipk/opt/QtPalmtop/help/.tinyscheme/schemetutorial/schemetutorial.html)
 - [TinyScheme Documentation](./src/ipk/opt/QtPalmtop/help/.tinyscheme/tinyscheme.html)
 - [TinyScheme Extension Functions](./src/ipk/opt/QtPalmtop/help/.tinyscheme/tsx-functions.html)
 
